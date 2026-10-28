@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Local secrets (e.g. ConnectionStrings:Unily) live outside the repository: dotnet user-secrets set ... -->
+    <UserSecretsId>dotnet-challenge-api-unily</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <!-- Design-time only: lets `dotnet ef dbcontext scaffold` use this project as startup project. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotnet.challenge.data\dotnet.challenge.data.csproj" />
+    <ProjectReference Include="..\dotnet.challenge.data.sqlserver\dotnet.challenge.data.sqlserver.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    OPTIONAL SQL Server storage (EF Core 8, database-first). Not used by default: the challenge requires the
+    in-memory cache ("Persistence:Provider": "InMemory"). Enabled only with "Persistence:Provider": "SqlServer".
+    Models/ and UnilyDbContext.cs are regenerated from the database with scripts/scaffold-db.ps1.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotnet.challenge.data\dotnet.challenge.data.csproj" />
+  </ItemGroup>
+</Project>
